@@ -1,0 +1,525 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-09-09 05:40+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ./attractions.py:94
+#: ./attractions_templates/sampleview.pt:91
+msgid "Address"
+msgstr "地址"
+
+#: ./specialview_templates/homepageview.pt:459
+msgid "All"
+msgstr "全區"
+
+#: ./specialview_templates/attractionsview.pt:59
+msgid "All Attractions"
+msgstr "全台景點"
+
+#: ./profiles/default/types/twtour.content.attractions.xml
+#: ./specialview_templates/attractionsview.pt:28
+#: ./specialview_templates/homepageview.pt:449
+msgid "Attractions"
+msgstr "景點介紹"
+
+#: ./jbot_templates/plone.app.layout.viewlets.footer.pt:19
+msgid "Attractions Search"
+msgstr "搜尋景點"
+
+#: ./browser/template/attractionssearch.pt:21
+#: ./browser/template/nearbysearch.pt:21
+msgid "Attractions Search Result"
+msgstr "搜尋結果"
+
+#: ./profiles/default/types/twtour.content.attractions.xml
+msgid "Attractions for taiwan tour"
+msgstr "台灣景點介紹"
+
+#: ./city.py:26
+#: ./specialview_templates/homepageview.pt:461
+msgid "Central"
+msgstr "中部"
+
+#: ./city.py:41
+msgid "Changhua County"
+msgstr "彰化縣"
+
+#: ./city.py:44
+msgid "Chiayi City"
+msgstr "嘉義市"
+
+#: ./city.py:45
+msgid "Chiayi County"
+msgstr "嘉義縣"
+
+#: ./profiles/default/types/twtour.content.city.xml
+msgid "Cities Infomation"
+msgstr "城市資訊"
+
+#: ./attractions_templates/sampleview.pt:77
+#: ./profiles/default/types/twtour.content.city.xml
+msgid "City"
+msgstr "城市"
+
+#: ./city.py:69
+msgid "City Code"
+msgstr "城市代碼"
+
+#: ./attractions.py:64
+msgid "City Name"
+msgstr "城市名稱"
+
+#: ./browser/template/attractionssearch.pt:49
+#: ./browser/template/nearbysearch.pt:48
+#: ./specialview_templates/attractionsview.pt:77
+msgid "City Name:"
+msgstr "城市名稱:"
+
+#: ./attractions_templates/sampleview.pt:81
+msgid "Contact Information"
+msgstr "聯絡資訊"
+
+#: ./attractions_templates/sampleview.pt:48
+msgid "Description"
+msgstr "景點介紹"
+
+#: ./city.py:28
+#: ./specialview_templates/homepageview.pt:463
+msgid "Eastern"
+msgstr "東部"
+
+#: ./tourevent.py:76
+msgid "Event DM"
+msgstr "活動型錄"
+
+#: ./tourevent_templates/sampleview.pt:51
+msgid "Event Website"
+msgstr "活動網址"
+
+#: ./tourevent.py:55
+#: ./tournews.py:39
+msgid "Event detail information"
+msgstr "活動詳細資訊"
+
+#: ./tourevent.py:50
+msgid "Event end date"
+msgstr "活動結束日期"
+
+#: ./tourevent.py:45
+msgid "Event start date"
+msgstr "活動開始日期"
+
+#: ./tourevent.py:60
+msgid "Event web site URL"
+msgstr "活動網站"
+
+#: ./attractions_templates/sampleview.pt:50
+msgid "Gallery"
+msgstr "相簿"
+
+#: ./attractions.py:114
+msgid "Gallery image list"
+msgstr "影像列表"
+
+#: ./tourevent_templates/sampleview.pt:53
+msgid "Go to event website (external link)"
+msgstr "前往活動網站(外部連結)"
+
+#: ./city.py:85
+msgid "Hotelscombined Banner html code"
+msgstr "HotelCombined橫幅廣告碼"
+
+#: ./city.py:75
+msgid "Hotelscombined search box html code"
+msgstr "HotelCombined搜尋框程式碼"
+
+#: ./city.py:80
+msgid "Hotelscombined text link html code"
+msgstr "HotelCombined文字連結碼"
+
+#: ./city.py:38
+msgid "Hsinchu City"
+msgstr "新竹市"
+
+#: ./city.py:37
+msgid "Hsinchu County"
+msgstr "新竹縣"
+
+#: ./city.py:50
+msgid "Hualien County"
+msgstr "花蓮縣"
+
+#: ./attractions.py:82
+msgid "Introduction"
+msgstr "簡介"
+
+#: ./city.py:47
+msgid "Kaohsiung City"
+msgstr "高雄市"
+
+#: ./city.py:34
+msgid "Keelung City"
+msgstr "基隆市"
+
+#: ./city.py:53
+msgid "Kinmen County"
+msgstr "金門縣"
+
+#: ./tourevent.py:35
+msgid "Lead Image"
+msgstr "封面圖片"
+
+#: ./tournews.py:34
+msgid "Lead image"
+msgstr "封面圖片"
+
+#: ./city.py:54
+msgid "Lienchiang County"
+msgstr "連江縣"
+
+#: ./attractions.py:88
+#: ./attractions_templates/sampleview.pt:86
+#: ./tourevent.py:40
+msgid "Location"
+msgstr "地點"
+
+#: ./city.py:39
+msgid "Miaoli County"
+msgstr "苗栗縣"
+
+#: ./city.py:42
+msgid "Nantou County"
+msgstr "南投縣"
+
+#: ./attractions_templates/sampleview.pt:166
+msgid "Nearby Attractions"
+msgstr "附近景點"
+
+#: ./city.py:33
+msgid "New Taipei City"
+msgstr "新北市"
+
+#: ./specialview_templates/homepageview.pt:375
+#: ./specialview_templates/newsview.pt:21
+msgid "News"
+msgstr "最新消息"
+
+#: ./browser/template/attractionssearch.pt:67
+#: ./browser/template/getcontentlist.pt:37
+#: ./browser/template/nearbysearch.pt:66
+msgid "Next Page"
+msgstr "下一頁"
+
+#: ./attractions_templates/sampleview.pt:176
+msgid "No related item yet."
+msgstr "尚無相關項目"
+
+#: ./city.py:25
+#: ./specialview_templates/homepageview.pt:460
+msgid "Northern"
+msgstr "北部"
+
+#: ./city.py:29
+#: ./specialview_templates/homepageview.pt:464
+msgid "OutlyingIslands"
+msgstr "離島地區"
+
+#: ./city.py:52
+msgid "Penghu County"
+msgstr "澎湖縣"
+
+#: ./tourevent_templates/sampleview.pt:46
+msgid "Period"
+msgstr "活動期間"
+
+#: ./specialview_templates/eventview.pt:47
+msgid "Period:"
+msgstr "活動期間"
+
+#: ./city.py:48
+msgid "Pingtung County"
+msgstr "屏東縣"
+
+#: ./browser/template/attractionssearch.pt:62
+#: ./browser/template/getcontentlist.pt:35
+#: ./browser/template/nearbysearch.pt:61
+msgid "Previous Page"
+msgstr "前一頁"
+
+#: ./attractions_templates/sampleview.pt:49
+msgid "Profile"
+msgstr "相關資訊"
+
+#: ./specialview_templates/homepageview.pt:399
+#: ./specialview_templates/newsview.pt:48
+msgid "Publish Date:"
+msgstr "發佈日期"
+
+#: ./city.py:63
+msgid "Region"
+msgstr "區域"
+
+#: ./tourevent_templates/sampleview.pt:58
+#: ./tournews_templates/sampleview.pt:45
+msgid "Related Attractions"
+msgstr "相關景點"
+
+#: ./attractions_templates/sampleview.pt:196
+msgid "Related Event"
+msgstr "相關活動"
+
+#: ./attractions_templates/sampleview.pt:209
+msgid "Related News"
+msgstr "相關新聞"
+
+#: ./tourevent.py:66
+#: ./tournews.py:45
+msgid "Related attractions"
+msgstr "相關景點"
+
+#: ./browser/template/attractionssearch.pt:30
+#: ./browser/template/nearbysearch.pt:30
+msgid "Search result total:"
+msgstr "搜尋結果筆數:"
+
+#: ./specialslider.py:31
+msgid "Slide Image1"
+msgstr "第一張投影片"
+
+#: ./specialslider.py:41
+msgid "Slide Image1 Description"
+msgstr "第一張投影片的說明"
+
+#: ./specialslider.py:36
+msgid "Slide Image1 Slogan"
+msgstr "第一張投影片的標語"
+
+#: ./specialslider.py:47
+msgid "Slide Image2"
+msgstr "第二張投影片"
+
+#: ./specialslider.py:62
+msgid "Slide Image2 Description"
+msgstr "第二張投影片的說明"
+
+#: ./specialslider.py:57
+msgid "Slide Image2 Slogan"
+msgstr "第二張投影片的標語"
+
+#: ./specialslider.py:52
+msgid "Slide Image2, web site logo"
+msgstr "網站logo圖片，顯示在第二張投影片"
+
+#: ./specialslider.py:68
+msgid "Slide Image3"
+msgstr "第三張投影片"
+
+#: ./specialslider.py:83
+msgid "Slide Image3 Description1"
+msgstr "第三張投影片的第一段文字"
+
+#: ./specialslider.py:88
+msgid "Slide Image3 Description2"
+msgstr "第三張投影片的第二段文字"
+
+#: ./specialslider.py:78
+msgid "Slide Image3 Slogan"
+msgstr "第三張投影片的標語"
+
+#: ./specialslider.py:73
+msgid "Slide Image3, small image"
+msgstr "較小的圖片，顯示在第三張投影片中"
+
+#: ./specialslider.py:94
+msgid "Slide Image4"
+msgstr "第四張投影片"
+
+#: ./specialslider.py:109
+msgid "Slide Image4 Description1"
+msgstr "第四張投影片的第一段文字"
+
+#: ./specialslider.py:114
+msgid "Slide Image4 Description2"
+msgstr "第四張投影片的第二段文字"
+
+#: ./specialslider.py:104
+msgid "Slide Image4 Slogan"
+msgstr "第四張投影片的標語"
+
+#: ./specialslider.py:99
+msgid "Slide Image4, small image"
+msgstr "較小的圖片，顯示在第四張投影片中"
+
+#: ./browser/template/getcontentlist.pt:8
+msgid "Sorry, no data yat !"
+msgstr "很抱歉，目前尚無資料可以顯示。"
+
+#: ./attractions_templates/sampleview.pt:68
+msgid "Source of Article:"
+msgstr "文章來源:"
+
+#: ./attractions.py:125
+msgid "Sources of articles"
+msgstr "文章來源"
+
+#: ./city.py:27
+#: ./specialview_templates/homepageview.pt:462
+msgid "Southern"
+msgstr "南部"
+
+#: ./profiles/default/types/twtour.content.specialslider.xml
+msgid "Special Slider for taiwan-tour.tw"
+msgstr "首頁的幻燈片秀"
+
+#: ./profiles/default/types/twtour.content.specialview.xml
+msgid "Special View"
+msgstr "特殊頁面顯示"
+
+#: ./profiles/default/types/twtour.content.specialslider.xml
+msgid "SpecialSlider"
+msgstr "首頁專用幻燈片秀"
+
+#: ./profiles/default/types/twtour.content.specialview.xml
+msgid "SpecialView"
+msgstr "特殊頁面顯示"
+
+#: ./city.py:40
+msgid "Taichung City"
+msgstr "台中市"
+
+#: ./city.py:46
+msgid "Tainan City"
+msgstr "台南市"
+
+#: ./city.py:35
+msgid "Taipei City"
+msgstr "台北市"
+
+#: ./city.py:51
+msgid "Taitung County"
+msgstr "台東縣"
+
+#: ./profiles/default/types/twtour.content.tourevent.xml
+msgid "Taiwan Tour Event"
+msgstr "台灣旅遊活動"
+
+#: ./profiles/default/types/twtour.content.tournews.xml
+msgid "Taiwan Tour News Item"
+msgstr "台灣旅遊新聞"
+
+#: ./jbot_templates/plone.app.layout.viewlets.footer.pt:8
+msgid "Taiwan-tour.tw<sup>&reg;</sup> Web Site"
+msgstr ""
+
+#: ./city.py:36
+msgid "Taoyuan City"
+msgstr "桃園市"
+
+#: ./profiles/default/types/twtour.content.tourevent.xml
+msgid "TourEvent"
+msgstr "旅遊活動"
+
+#: ./profiles/default/types/twtour.content.tournews.xml
+msgid "TourNews"
+msgstr "旅遊新聞"
+
+#: ./attractions.py:99
+#: ./attractions_templates/sampleview.pt:106
+msgid "Transportation"
+msgstr "交通資訊"
+
+#: ./specialview_templates/homepageview.pt:328
+msgid "UPCOMING EVENT"
+msgstr "近期活動"
+
+#: ./specialview_templates/eventview.pt:21
+msgid "Upcoming Event"
+msgstr "活動訊息"
+
+#: ./attractions_templates/sampleview.pt:96
+msgid "Web Address"
+msgstr "官網網址"
+
+#: ./city.py:49
+msgid "Yilan County"
+msgstr "宜蘭縣"
+
+#: ./city.py:43
+msgid "Yunlin County"
+msgstr "雲林縣"
+
+#: ./attractions_templates/sampleview.pt:52
+msgid "accommodation"
+msgstr "旅宿資訊"
+
+#: ./attractions.py:71
+msgid "contact information"
+msgstr "聯絡資訊"
+
+#: ./specialview.py:28
+msgid "content body"
+msgstr "特殊頁面內容"
+
+#. Default: "The ${plonecms} ${copyright} 2013-${current_year}"
+#: ./jbot_templates/plone.app.layout.viewlets.footer.pt:11
+msgid "description_copyright"
+msgstr ""
+
+#: ./attractions.py:105
+msgid "lead Image"
+msgstr "封面圖片"
+
+#: ./attractions_templates/sampleview.pt:183
+msgid "more nearby attractions"
+msgstr "更多附近景點"
+
+#: ./attractions_templates/sampleview.pt:185
+msgid "or"
+msgstr "或"
+
+#: ./attractions_templates/sampleview.pt:51
+msgid "related Items"
+msgstr "相關訊息"
+
+#: ./attractions_templates/sampleview.pt:186
+msgid "select city"
+msgstr "選擇其他城市"
+
+#. Default: "Home"
+#: ./jbot_templates/plone.app.layout.viewlets.path_bar.pt:11
+msgid "tabs_home"
+msgstr "首頁"
+
+#. Default: "Copyright"
+#: ./jbot_templates/plone.app.layout.viewlets.footer.pt:10
+msgid "title_copyright"
+msgstr ""
+
+#: ./attractions.py:115
+msgid "using in gallery"
+msgstr "在相簿使用"
+
+#: ./attractions.py:106
+msgid "using in homepage and content, width:height=3:2"
+msgstr "使用於首頁及內容，W:H=3:2"
+
+#: ./attractions.py:76
+msgid "website url"
+msgstr "官網網址"
+
+#. Default: "You are here:"
+#: ./jbot_templates/plone.app.layout.viewlets.path_bar.pt:10
+msgid "you_are_here"
+msgstr "您的位置:"
+

@@ -1,0 +1,42 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="twgov.content">
+
+  <browser:page
+    for="*"
+    name="getcontentlist"
+    permission="zope2.View"
+    class=".getcontentlist.GetContentList" />
+
+  <browser:page
+    for="*"
+    name="attractionssearch"
+    permission="zope2.View"
+    class=".attractionssearch.AttractionsSearch" />
+
+  <browser:page
+    for="*"
+    name="nearbysearch"
+    permission="zope2.View"
+    class=".nearbysearch.NearbySearch" />
+
+  <browser:page
+    for="*"
+    name="sitemap.xml"
+    permission="zope2.View"
+    class=".sitemap.SiteMap" />
+
+
+<!--
+測試用，平常不開
+  <browser:page
+    for="*"
+    name="testFunction"
+    permission="cmf.ManagePortal"
+    class=".testfunction.TestFunction" />
+-->
+
+</configure>
+
