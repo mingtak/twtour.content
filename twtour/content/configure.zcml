@@ -43,5 +43,7 @@
   <!-- browser view -->
   <include package=".browser" />
 
+  <!-- viewlets -->
+  <include package=".viewlets" />
 
 </configure>
