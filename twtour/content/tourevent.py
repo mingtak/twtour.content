@@ -20,7 +20,10 @@ from zope.lifecycleevent.interfaces import IObjectAddedEvent
 
 from twtour.content import MessageFactory as _
 from twtour.content.attractions import IAttractions
-
+from plone.multilingual.interfaces import ITranslationManager, ILanguage
+from collective.geo.settings.schema import Coordinate
+from collective import dexteritytextindexer
+from plone.indexer import indexer
 from random import choice
 
 
@@ -36,23 +39,36 @@ class ITourEvent(form.Schema, IImageScaleTraversable):
         required=True,
     )
 
+    dexteritytextindexer.searchable('location')
     location = schema.TextLine(
         title=_(u'Location'),
         required=False,
     )
 
-    startDate = schema.Datetime(
+    dexteritytextindexer.searchable('organizer')
+    organizer = schema.TextLine(
+        title=_(u'Organizer'),
+        required=False,
+    )
+
+    startDate = schema.Date(
         title=_(u'Event start date'),
         required=True,
     )
 
-    endDate = schema.Datetime(
+    endDate = schema.Date(
         title=_(u'Event end date'),
         required=True,
     )
 
+    dexteritytextindexer.searchable('organizer')
     detail = RichText(
         title=_(u'Event detail information'),
+        required=False,
+    )
+
+    sourcePageUrl = schema.URI(
+        title=_(u'Source page URL'),
         required=False,
     )
 
@@ -69,11 +85,33 @@ class ITourEvent(form.Schema, IImageScaleTraversable):
                 object_provides=IAttractions.__identifier__,
             ),
         ),
-        required=True,
+        required=False,
     )
 
     eventDM = NamedBlobImage(
         title=_(u'Event DM'),
+        required=False,
+    )
+
+    dexteritytextindexer.searchable('mapPoint')
+    mapPoint = schema.TextLine(
+        title=_(u'Map point'),
+        required=False,
+    )
+
+    latitude = Coordinate(
+        title=_(u'Latitude'),
+        required=False,
+    )
+
+    longitude = Coordinate(
+        title=_(u'Longitude'),
+        required=False,
+    )
+
+    pubDateTime = schema.TextLine(
+        title=_(u'Published datetime'),
+        description=_(u'Note: for test, not datetime format'),
         required=False,
     )
 
@@ -87,8 +125,19 @@ class SampleView(grok.View):
 
     grok.context(ITourEvent)
     grok.require('zope2.View')
-
     grok.name('view')
+
+
+    def getTranslated(self):
+        return ITranslationManager(self.context).get_translated_languages()
+
+
+    def getLanguage(self):
+        return ILanguage(self.context).get_language()
+
+
+    def get_translation(self, langCode):
+        return ITranslationManager(self.context).get_translation(langCode)
 
 
 @grok.subscribe(ITourEvent, IObjectAddedEvent)
@@ -100,7 +149,14 @@ def initialItem(item, event):
         subject.append(choice(['Taiwan Travel', 'Taiwan Tour', 'Formosa', 'Backpacker']))
     else:
         subject.append(item.location)
-    for relatedItem in item.relatedAttractions:
-        subject.append(relatedItem.to_object.Title())
+    if item.relatedAttractions is not None:
+        for relatedItem in item.relatedAttractions:
+            subject.append(relatedItem.to_object.Title())
     item.setSubject(subject)
     item.reindexObject()
+
+
+@indexer(ITourEvent)
+def pubDateTime_indexer(obj):
+     return obj.pubDateTime
+grok.global_adapter(pubDateTime_indexer, name='pubDateTime')

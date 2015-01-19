@@ -1,11 +1,12 @@
 #-*- coding:utf-8 -*-
 from zope.interface import Interface
 from five import grok
-from plone.app.layout.viewlets.interfaces import IPortalHeader, IAboveContent, IBelowContentBody
+from plone.app.layout.viewlets.interfaces import IContentViews, IPortalHeader, IAboveContent, IBelowContentBody
 #from reporter.content.eventinfo import IEventInfo
 #from reporter.content.article import IArticle
 #from reporter.content.contentlist import IContentList
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+
 
 
 """

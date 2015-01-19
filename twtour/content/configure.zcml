@@ -46,4 +46,6 @@
   <!-- viewlets -->
   <include package=".viewlets" />
 
+  <!-- configlets -->
+  <include package=".configlets" />
 </configure>

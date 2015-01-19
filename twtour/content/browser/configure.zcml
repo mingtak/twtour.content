@@ -28,6 +28,12 @@
     permission="zope2.View"
     class=".sitemap.SiteMap" />
 
+  <browser:page
+    for="*"
+    name="getEvent"
+    permission="cmf.ManagePortal"
+    class=".getdata.GetEvent" />
+
 
 <!--
 測試用，平常不開

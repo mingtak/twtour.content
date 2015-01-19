@@ -10,6 +10,7 @@
 
 <metal:main fill-slot="content-core">
 
+<tal:check condition="python:'Manager' not in request['AUTHENTICATED_USER'].getRoles()">
 <!-- Top Slide Begin -->
         <section class="sliderwrapper clearfix plone-homepage" id="plone-home-slide">
             <div class="tp-banner-container">
@@ -501,7 +502,11 @@ in tempus urna rhoncus faucibus. Vestibulum hendrerit diam nunc, in tempus urna 
             </div>
 </section>
 <!-- attractions End -->
+</tal:check>
 
+<tal:check condition="python:'Manager' in request['AUTHENTICATED_USER'].getRoles()">
+<h2 i18n:translate="">Hi, manager, this page is manage interface.</h2>
+</tal:check>
 
 
 

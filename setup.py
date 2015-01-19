@@ -5,7 +5,7 @@ version = '3.23'
 
 setup(name='twtour.content',
       version=version,
-      description="Taiwan Tour Web Site Project",
+      description="Taiwan Tour Web Site Project Content type.",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
@@ -30,6 +30,7 @@ setup(name='twtour.content',
           'plone.app.relationfield',
           'plone.namedfile [blobs]',
           # -*- Extra requirements: -*-
+          'beautifulsoup4',
       ],
       entry_points="""
       # -*- Entry points: -*-

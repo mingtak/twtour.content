@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="twtour.content">
+
+  <browser:page
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    name="get_data_setup"
+    permission="cmf.ManagePortal"
+    class=".getdatasetup.GetDataSetupControlPanelView" />
+
+<!--
+測試用，平常不開
+  <browser:page
+    for="*"
+    name="testFunction"
+    permission="cmf.ManagePortal"
+    class=".testfunction.TestFunction" />
+-->
+
+</configure>
+

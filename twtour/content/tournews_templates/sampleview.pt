@@ -22,6 +22,16 @@
       <div class="half-width clearfix">
         <div id="content" class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
 
+<tal:translate define="translated view/getTranslated;
+                       langeuage view/getLanguage;
+                       tab python:{'zh-tw':'正體', 'zh-cn':'简体', 'en-us':'En'}">
+  <tal:repeat repeat="lang translated">
+    <tal:check define="url python:view.get_translation(lang).absolute_url()"
+               condition="python:langeuage != lang">
+      <a tal:attributes="href url" class="btn btn-info btn-xs btn-rounded" tal:content="python:tab[lang]"> en </a>
+    </tal:check>
+  </tal:repeat>
+</tal:translate>
 
 <div class="title1">
   <h1 tal:content="context/Title"></h1>

@@ -34,6 +34,7 @@ from collective import dexteritytextindexer
 from plone.indexer import indexer
 from random import choice
 import logging
+from plone.multilingual.interfaces import ITranslationManager, ILanguage
 
 
 logger = logging.getLogger("attractions.py")
@@ -138,6 +139,18 @@ class SampleView(grok.View):
     grok.context(IAttractions)
     grok.require('zope2.View')
     grok.name('view')
+
+
+    def getTranslated(self):
+        return ITranslationManager(self.context).get_translated_languages()
+
+
+    def getLanguage(self):
+        return ILanguage(self.context).get_language()
+
+
+    def get_translation(self, langCode):
+        return ITranslationManager(self.context).get_translation(langCode)
 
 
     def leadImage(self):

@@ -21,6 +21,7 @@ from zope.lifecycleevent.interfaces import IObjectAddedEvent
 from twtour.content.attractions import IAttractions
 from twtour.content import MessageFactory as _
 
+from plone.multilingual.interfaces import ITranslationManager, ILanguage
 from random import choice
 
 # Interface class; used to define content-type schema.
@@ -61,8 +62,19 @@ class SampleView(grok.View):
 
     grok.context(ITourNews)
     grok.require('zope2.View')
-
     grok.name('view')
+
+
+    def getTranslated(self):
+        return ITranslationManager(self.context).get_translated_languages()
+
+
+    def getLanguage(self):
+        return ILanguage(self.context).get_language()
+
+
+    def get_translation(self, langCode):
+        return ITranslationManager(self.context).get_translation(langCode)
 
 
 @grok.subscribe(ITourNews, IObjectAddedEvent)

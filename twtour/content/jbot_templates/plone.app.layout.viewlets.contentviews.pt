@@ -1,7 +1,11 @@
-                                <div class="panel-group" id="accordion"
-                                 xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-                                 xmlns:tal="http://xml.zope.org/namespaces/tal"
-                                 i18n:domain="plone">
+
+<div xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     i18n:domain="plone">
+
+
+<div class="panel-group" id="accordion"
+     tal:condition="python:'Manager' not in request['AUTHENTICATED_USER'].getRoles()">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <h6 class="panel-title">
@@ -10,13 +14,9 @@
                                                  data-parent="#accordion"
                                                  href="#collapseTwo" i18n:translate="heading_views">Views</a>
                                             </h6>
-                                        </div><!-- end panel heading -->
+                                        </div>
                                         <div id="collapseTwo" class="panel-collapse collapse">
                                             <div class="panel-body">
-
-
-
-
 
 <div tal:omit-tag=""
      tal:define="ploneview context/@@plone;"
@@ -47,6 +47,39 @@
 
                                             </div>
                                         </div>
-                                    </div><!-- end panel -->
+                                    </div>
 
-                                </div><!-- panel-group -->
+</div> <!-- panel-group -->
+
+
+
+    <tal:block define="view_actions view/prepareObjectTabs;"
+               condition="python:'Manager' in request['AUTHENTICATED_USER'].getRoles()">
+<!-- admin -->
+        <p class="hiddenStructure"
+            tal:condition="view_actions"
+            i18n:translate="heading_views">Views</p>
+
+        <ul class="contentViews"
+            id="content-views"
+            i18n:domain="plone">
+
+            <tal:views repeat="action view_actions">
+              <li tal:define="selected action/selected|nothing;"
+                  tal:attributes="id string:contentview-${action/id};
+                                  class python:selected and 'selected' or 'plain'">
+                <a href=""
+                   tal:content="action/title"
+                   tal:attributes="href action/url;
+                                   target action/link_target|nothing;"
+                   i18n:translate="">
+                View name
+                </a>
+              </li>
+            </tal:views>
+
+        </ul>
+
+    </tal:block>
+
+</div>
