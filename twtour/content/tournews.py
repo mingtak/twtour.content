@@ -23,6 +23,7 @@ from twtour.content import MessageFactory as _
 
 from plone.multilingual.interfaces import ITranslationManager, ILanguage
 from random import choice
+from plone.indexer import indexer
 
 # Interface class; used to define content-type schema.
 
@@ -50,6 +51,16 @@ class ITourNews(form.Schema, IImageScaleTraversable):
             ),
         ),
         required=True,
+    )
+
+    pubDate = schema.Datetime(
+        title=_(u'Published datetime'),
+        required=False,
+    )
+
+    sourcePageUrl = schema.URI(
+        title=_(u'Source page URL'),
+        required=False,
     )
 
 
@@ -83,7 +94,14 @@ def initialItem(item, event):
     subject = list(item.Subject())
     subject.append(item.Title())
     subject.append(choice(['Taiwan Travel', 'Taiwan Tour', 'Formosa', 'Backpacker']))
-    for relatedItem in item.relatedAttractions:
-        subject.append(relatedItem.to_object.Title())
+    if item.relatedAttractions is not None:
+        for relatedItem in item.relatedAttractions:
+            subject.append(relatedItem.to_object.Title())
     item.setSubject(subject)
     item.reindexObject()
+
+
+@indexer(ITourNews)
+def pubDate_indexer(obj):
+     return obj.pubDate
+grok.global_adapter(pubDate_indexer, name='pubDate')

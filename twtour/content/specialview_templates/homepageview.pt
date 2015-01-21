@@ -322,22 +322,21 @@ in tempus urna rhoncus faucibus. Vestibulum hendrerit diam nunc, in tempus urna 
 
 
 <!-- Tourevent Section Begin-->
-        <section class="whitewrapper greybg jt-shadow bordertop clearfix" id="plone-section1">
+        <section class="whitewrapper greybg jt-shadow bordertop clearfix" id="plone-section1-1">
         	<div class="container">
             	<div class="row">
-        			<div class="title text-center">
-                        <h2 i18n:translate="">UPCOMING EVENT</h2>
-                        <hr>
-<!--
-                        <p class="lead">Mirum est notare quam littera gothica, quam nunc putamus parum claram</p>
--->
-                    </div>
 <tal:upcomingEvents define="catalog python:context.portal_catalog;
                             brain python:catalog(portal_type='twtour.content.tourevent',
-                                                 sort_on='created', sort_order='reverse')[:4]"
-                    repeat="item brain">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    	<div class="testimonial_wrap" tal:define="oddOrEven repeat/item/number">
+                                                 sort_on='created', sort_order='reverse')[:4]">
+                    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12" id="plone-section1">
+
+                                <div class="title1">
+                        <h2 i18n:translate="">UPCOMING EVENT</h2>
+                        <hr style="margin:0px 0px 20px 0px">
+                    </div>
+
+<tal:repeat repeat="item brain">
+                    	<div class="testimonial_wrap" tal:define="oddOrEven repeat/item/number" style="margin:8px 0px">
                             <div class="testimonial_details" tal:attributes="data-effect python:'slide-left' if oddOrEven%2 == 1 else 'slide-right'">
                                 <a tal:attributes="href item/getURL" class="img-circle alignleft">
                                   <img tal:define="imageItem python:item.getObject()"
@@ -356,7 +355,9 @@ in tempus urna rhoncus faucibus. Vestibulum hendrerit diam nunc, in tempus urna 
                                 </div><!-- testimonial_desc -->                 
                             </div><!-- end testimonial_meta -->
                         </div><!-- end testimonial_wrap -->
+</tal:repeat>
                     </div><!-- end col-lg-6 -->
+
 </tal:upcomingEvents>                    
                     
 		</div><!-- end row -->
@@ -367,6 +368,7 @@ in tempus urna rhoncus faucibus. Vestibulum hendrerit diam nunc, in tempus urna 
 <!-- Event Section End -->
 
 <!-- News Item Section Begin -->
+
 
 <section class="whitewrapper bordertop clearfix" id="plone-section2">
         	<div class="container">

@@ -10,9 +10,9 @@
     </index>
     <column value="cityCode"/>
 
-    <index name="pubDateTime" meta_type="FieldIndex">
-        <indexed_attr value="pubDateTime"/>
+    <index name="pubDate" meta_type="DateIndex">
+        <indexed_attr value="pubDate"/>
     </index>
-    <column value="pubDateTime"/>
+    <column value="pubDate"/>
 
 </object>

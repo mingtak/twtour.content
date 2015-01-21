@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+  <ol tal:define="brain view/brain">
+    <tal:repeat repeat="item brain">
+      <li>
+        <a tal:attributes="href string:${item/getURL}/edit"
+           tal:content="item/Title"
+           target="_blank" style="font-size:1.3em" />
+        <p>
+          <a tal:attributes="href python:item.getObject().sourcePageUrl" target="_blank">資料來源</a>
+          <span tal:content="string: 發佈時間: ${item/pubDate}" />
+        </p>
+        <p tal:content="item/Description" />
+        <hr>
+      </li>
+    </tal:repeat>
+  </ol>
+</body>
+</html>

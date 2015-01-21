@@ -16,23 +16,62 @@ class IGetDataSetup(form.Schema):
     # Get twtourEvent, zh-TW,
     twtourEventUrl_tw_1 = schema.URI(
         title=_(u'URL'),
-        description=_(u'twtourEvent URL, zh-TWTaiwan'),
+        description=_(u'twtourEvent URL, zh-tw, twtourEventUrl_tw_1'),
         required=False,
     )
 
     # Get twtourEvent, en-US,
     twtourEventUrl_us_1 = schema.URI(
         title=_(u'URL'),
-        description=_(u'twtourEvent URL, en-US'),
+        description=_(u'twtourEvent URL, en-us, twtourEventUrl_us_1'),
         required=False,
     )
 
     # Get tourNews, en-us
     tourNewsUrl_us_1 = schema.URI(
         title=_(u'URL'),
-        description=_(u'tourNews URL, en-us'),
+        description=_(u'tourNews URL, en-us, tourNewsUrl_us_1'),
         required=False,
     )
+
+    # Get tourNews, zh-tw
+    tourNewsUrl_tw_1 = schema.URI(
+        title=_(u'URL'),
+        description=_(u'tourNews URL, zh-tw, tourNewsUrl_tw_1'),
+        required=False,
+    )
+
+    # Get tourNews, en-us
+    tourNewsUrl_us_2 = schema.URI(
+        title=_(u'URL'),
+        description=_(u'tourNews URL, en-us, tourNewsUrl_us_2'),
+        required=False,
+    )
+
+    # Get tourNews, zh-tw
+    tourNewsUrl_tw_2 = schema.URI(
+        title=_(u'URL'),
+        description=_(u'tourNews URL, zh-tw, tourNewsUrl_tw_2'),
+        required=False,
+    )
+
+    # Get tourNews, en-us
+    tourNewsUrl_us_3 = schema.URI(
+        title=_(u'URL'),
+        description=_(u'tourNews URL, en-us, tourNewsUrl_us_3'),
+        required=False,
+    )
+
+    # Get tourNews, zh-tw
+    tourNewsUrl_tw_3 = schema.URI(
+        title=_(u'URL'),
+        description=_(u'tourNews URL, zh-tw, tourNewsUrl_tw_3'),
+        required=False,
+    )
+
+
+
+
 
 
 class GetDataSetupControlPanelForm(RegistryEditForm):

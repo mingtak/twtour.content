@@ -109,9 +109,8 @@ class ITourEvent(form.Schema, IImageScaleTraversable):
         required=False,
     )
 
-    pubDateTime = schema.TextLine(
+    pubDate = schema.Datetime(
         title=_(u'Published datetime'),
-        description=_(u'Note: for test, not datetime format'),
         required=False,
     )
 
@@ -157,6 +156,6 @@ def initialItem(item, event):
 
 
 @indexer(ITourEvent)
-def pubDateTime_indexer(obj):
-     return obj.pubDateTime
-grok.global_adapter(pubDateTime_indexer, name='pubDateTime')
+def pubDate_indexer(obj):
+     return obj.pubDate
+grok.global_adapter(pubDate_indexer, name='pubDate')

@@ -34,6 +34,17 @@
     permission="cmf.ManagePortal"
     class=".getdata.GetEvent" />
 
+  <browser:page
+    for="*"
+    name="getNews"
+    permission="cmf.ManagePortal"
+    class=".getdata.GetNews" />
+
+  <browser:page
+    for="*"
+    name="contentManage"
+    permission="cmf.ManagePortal"
+    class=".contentmanage.ContentManage" />
 
 <!--
 測試用，平常不開

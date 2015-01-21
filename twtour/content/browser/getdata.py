@@ -8,19 +8,23 @@ import urllib2
 from Products.CMFPlone.utils import safe_unicode
 from datetime import date, datetime
 from plone.app.textfield.value import RichTextValue
+from plone.multilingual.interfaces import ILanguage
+from htmllaundry import strip_markup
 
 logger = logging.getLogger("getdata.py")
 
 registryPrefix = "twtour.content.configlets.getdatasetup.IGetDataSetup"
 
-class GetEvent(BrowserView):
+
+class GetNews(BrowserView):
 
     def __call__(self):
         portal = api.portal.get()
         request = self.request
         catalog = api.portal.get_tool(name='portal_catalog')
-        langDict = {'zh-tw':'twtourEventUrl_tw_1', 'en-us':'twtourEventUrl_us_1'}
-        url = api.portal.get_registry_record('%s.%s' % (registryPrefix, langDict[request['lang']]))
+        lang = request['lang']
+        suffix = request['suffix']
+        url = api.portal.get_registry_record('%s.%s' % (registryPrefix, suffix))
         response = urllib2.urlopen(url)
         doc = response.read()
         xmlSoup = BeautifulSoup(doc, 'xml')
@@ -28,8 +32,50 @@ class GetEvent(BrowserView):
         for item in items:
             try:
                 title = unicode(safe_unicode(item.find('title').string))
-                pubDateTime = unicode(safe_unicode(item.find('pubDate').string))
-                brain = catalog({'Language':request['lang'], 'pubDateTime':pubDateTime})
+                pubDateString = unicode(safe_unicode(item.find('pubDate').string))
+                pubDate = datetime.strptime(pubDateString, '%a, %d %b %Y %X %Z')
+                brain = catalog({'Language':lang, 'pubDate':pubDate})
+                if len(brain) > 0:
+                    continue
+                description = unicode(safe_unicode(item.find('description').string))
+                description = strip_markup(description)
+                sourcePageUrl = unicode(safe_unicode(item.find('link').string))
+
+                object = api.content.create(
+                    container=portal[lang]['news'],
+                    type='twtour.content.tournews',
+                    title=title,
+                    description=description,
+                    sourcePageUrl=sourcePageUrl,
+                    pubDate=pubDate,
+                    detail=RichTextValue(u'<p>%s</p>' % description, 'text/html', 'text/html'),
+                )
+#                ILanguage(object).set_language(lang)
+#                object.reindexObject()
+            except:
+                pass
+
+        return
+
+
+class GetEvent(BrowserView):
+
+    def __call__(self):
+        portal = api.portal.get()
+        request = self.request
+        catalog = api.portal.get_tool(name='portal_catalog')
+        suffix = request['suffix']
+        url = api.portal.get_registry_record('%s.%s' % (registryPrefix, suffix))
+        response = urllib2.urlopen(url)
+        doc = response.read()
+        xmlSoup = BeautifulSoup(doc, 'xml')
+        items = xmlSoup.find_all('item')
+        for item in items:
+            try:
+                title = unicode(safe_unicode(item.find('title').string))
+                pubDateString = unicode(safe_unicode(item.find('pubDate').string))
+                pubDate = datetime.strptime(pubDateString, '%a, %d %b %Y %X %Z')
+                brain = catalog({'Language':request['lang'], 'pubDate':pubDate})
                 if len(brain) > 0:
                     continue
                 description = unicode(safe_unicode(item.find('description').string))
@@ -50,7 +96,7 @@ class GetEvent(BrowserView):
                     title=title,
                     description=description,
                     sourcePageUrl=sourcePageUrl,
-                    pubDateTime=pubDateTime,
+                    pubDate=pubDate,
                     organizer=organizer,
                     eventWebSite=eventWebSite,
                     startDate=startDate,

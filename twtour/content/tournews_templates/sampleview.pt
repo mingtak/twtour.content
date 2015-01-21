@@ -39,7 +39,7 @@
 </div>
 
 
-<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" tal:condition="exists:context/@@images/leadImageForNews/lead">
   <img tal:replace="structure context/@@images/leadImageForNews/lead" />
 </div>
 
@@ -81,9 +81,6 @@
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         
 <!-- Disqus End -->
-
-
-
 
         </div>
       </div>
